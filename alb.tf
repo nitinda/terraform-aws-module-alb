@@ -7,7 +7,5 @@ resource "aws_lb" "demo" {
 
   enable_cross_zone_load_balancing = true
 
-  tags = merge(var.common_tags, map(
-    "Name", "terraform-demo-iam-role-ecs-service",
-  ))
+  tags = var.common_tags
 }
