@@ -1,4 +1,4 @@
-variable "alb_name_prefix" {
+variable "alb_name" {
     description = "Creates a unique name beginning with the specified prefix."
 }
 
