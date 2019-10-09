@@ -12,3 +12,7 @@ variable "alb_subnets" {
     type        = list(string)
 }
 
+## Tags
+variable "common_tags" {
+    description = "A mapping of tags to assign to the resource."
+}
