@@ -1,11 +1,8 @@
-resource "aws_lb" "demo" {
-  name               = var.alb_name
-  internal           = false
-  load_balancer_type = "application"
-  security_groups    = var.alb_security_groups
-  subnets            = var.alb_subnets
-
-  enable_cross_zone_load_balancing = true
-
-  tags = var.common_tags
+resource "aws_lb" "alb" {
+  name            = "${var.name}"
+  internal        = "${var.internal}"
+  security_groups = ["${var.security_groups}"]
+  subnets         = ["${var.subnets}"]
+  access_logs     = "${var.access_logs}"
+  tags            = "${var.common_tags}"
 }
