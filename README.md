@@ -44,9 +44,24 @@ To use this module, add the following call to your code:
 
 ```tf
 module "<layer>-lb-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-lb.git?ref=master"
+  source = "git::https://github.com/nitinda/terraform-module-aws-lb.git?ref=alb"
 
+  providers = {
+    "aws" = "aws.services"
+  }
 
+  # Tags
+  common_tags = "${merge(var.common_tags, map(
+    "Description", "Application Load balancer ",
+    "ManagedBy", "Terraform"
+  ))}"
+
+  # ALB
+  name            = "demo-alb-grafana"
+  internal        = false
+  security_groups = ["${var.security_group_ids}"]
+  subnets         = ["${var.subnet_ids}"]
+  access_logs     = []
 }
 ```
 ---
