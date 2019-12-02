@@ -3,27 +3,35 @@
 
 ## General
 
-This module may be used to create Load Balancer resources in AWS cloud provider..
+This module may be used to create **_Application Load Balancer_** resources in AWS cloud provider..
 
 ---
 
 
 ## Prerequisites
 
-This module needs Terraform 0.11.10 or newer.
+This module needs Terraform 0.12.16 or newer.
 You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
 
 This module deploys aws services details are in respective feature branches.
 
+
 ---
+
 
 ## Features Branches
 
 Below we are able to check the resources that are being created as part of this module call:
 
-From branch : **_alb_**
+From branch : **_terraform-11/alb_**
 
 * **_Application Load Balancer (Terraform 11 supported code)_**
+
+
+From branch : **_terraform-12/alb_**
+
+* **_Application Load Balancer (Terraform 12 supported code)_**
+
 
 From branch : **_nlb_** *work in progress*
 
@@ -34,7 +42,7 @@ From branch : **_nlb_** *work in progress*
 
 ## Below are the resources that are launched by this module
 
-* **_Load Balancer_**
+* **_Application Load Balancer_**
 
 
 ---
