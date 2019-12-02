@@ -9,23 +9,21 @@ variable "internal" {
 
 variable "security_groups" {
   description = "A list of security group IDs to assign to the LB. Only valid for Load Balancers of type application."
-  type        = "list"
+  type        = list(string)
 }
 
 variable "subnets" {
   description = " A list of subnet IDs to attach to the LB. Subnets cannot be updated for Load Balancers of type network."
-  type        = "list"
+  type        = list(string)
 }
 
 variable "access_logs" {
   description = "An Access Logs block."
-  type        = "list"
+  type        = list(string)
 }
 
-
-
 ## Tags
-variable common_tags {
+variable "common_tags" {
   description = "Resources Tags"
-  type        = "map"
+  type        = map(string)
 }
