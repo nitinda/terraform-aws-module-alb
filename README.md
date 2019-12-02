@@ -3,14 +3,14 @@
 
 ## General
 
-This module may be used to create Load Balancer resources in AWS cloud provider..
+This module may be used to create **_Application Load Balancer_** resources in AWS cloud provider..
 
 ---
 
 
 ## Prerequisites
 
-This module needs Terraform 0.11.10 or newer.
+This module needs Terraform 0.11.14 or newer.
 You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
 
 This module deploys aws services details are in respective feature branches.
@@ -21,7 +21,7 @@ This module deploys aws services details are in respective feature branches.
 
 Below we are able to check the resources that are being created as part of this module call:
 
-From branch : **_alb_**
+From branch : **_terraform-11/alb_**
 
 * **_Application Load Balancer (Terraform 11 supported code)_**
 
@@ -31,7 +31,7 @@ From branch : **_alb_**
 
 ## Below are the resources that are launched by this module
 
-* **_Load Balancer_**
+* **_Application Load Balancer_**
 
 
 ---
@@ -44,7 +44,7 @@ To use this module, add the following call to your code:
 
 ```tf
 module "<layer>-lb-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-lb.git?ref=alb"
+  source = "git::https://github.com/nitinda/terraform-module-aws-lb.git?ref=terraform-11/alb"
 
   providers = {
     "aws" = "aws.services"
