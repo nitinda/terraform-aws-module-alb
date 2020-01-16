@@ -11,5 +11,5 @@ resource "aws_lb" "alb" {
       prefix  = lookup(access_logs.value, "prefix", null)
     }
   }
-  tags = var.common_tags
+  tags = var.tags
 }

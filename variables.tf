@@ -23,7 +23,7 @@ variable "access_logs" {
 }
 
 ## Tags
-variable "common_tags" {
+variable "tags" {
   description = "Resources Tags"
   type        = map(string)
 }

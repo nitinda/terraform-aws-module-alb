@@ -43,27 +43,28 @@ From branch : **_terraform-12/alb_**
 To use this module, add the following call to your code:
 
 ```tf
-module "<layer>-lb-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-lb.git?ref=terraform-11/alb"
+module "alb>" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-lb.git?ref=terraform-12/alb"
 
   providers = {
-    "aws" = "aws.services"
+    aws = aws.services
   }
 
   # Tags
-  common_tags = "${merge(var.common_tags, map(
+  common_tags = merge(var.common_tags, map(
     "Description", "Application Load balancer ",
     "ManagedBy", "Terraform"
-  ))}"
+  ))
 
   # ALB
   name            = "demo-alb-grafana"
   internal        = false
-  security_groups = ["${var.security_group_ids}"]
-  subnets         = ["${var.subnet_ids}"]
-  access_logs     = []
+  security_groups = [ var.security_group_ids ]
+  subnets         = [ var.subnet_ids ]
 }
+
 ```
+
 ---
 
 ## Inputs
@@ -71,14 +72,14 @@ module "<layer>-lb-<AccountID>" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-|         **_Variable_**          |        **_Description_**            |   **_Type_**   |
-|---------------------------------|-------------------------------------|----------------|
-| name                            | Name of alb                         | string         |
-| internal                        | Alb type                            | string         |
-| security_groups                 | ALB security group                  | list           |
-| subnets                         | Subnets list                        | list           |
-| access_logs                     | An Access Logs block                | list of maps   |
-| common_tags                     | Common Tags                         | list           |
+|**_Variable_** | **_Description_** | **_Type_** | **_Comments_** |
+|:----|:----|-----:|-----:|
+| **_name_** | _Creates a unique name_ | _string_ | **_Required_** |
+| **_internal_** | _If true, the LB will be internal_ | _bool_ | **_Required_** |
+| **_security\_groups_** | _ALB security group_ | _list(string)_ | **_Required_** |
+| **_subnets_** | _A list of subnet IDs to attach to the LB_ | _list(string)_ | **_Required_** |
+| **_access\_logs_** | _An Access Logs block_ | _any_ | **_Optional (Default - [])_** |
+| **_tags_** | _Resources Tags_ | _map(string)_ | **_Required_** |
 
 
 
