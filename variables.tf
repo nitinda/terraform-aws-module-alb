@@ -20,6 +20,7 @@ variable "subnets" {
 variable "access_logs" {
   description = "An Access Logs block."
   type        = list(string)
+  default     = []
 }
 
 ## Tags
