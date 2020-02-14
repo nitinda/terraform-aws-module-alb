@@ -67,7 +67,9 @@ _The variables required in order for the module to be successfully called from t
 _Details are in respective branch._
 
 
-## Outputs
+---
+
+## _Outputs_
 
 * **_dns\_name_**
 * **_id_**
@@ -77,7 +79,9 @@ _Details are in respective branch._
 _Details are in respective branch._
 
 
-### Usage
+---
+
+### _Usage_
 
 _In order for the variables to be accessed on module level please use the syntax below:_
 
@@ -85,6 +89,7 @@ _In order for the variables to be accessed on module level please use the syntax
 module.<module_name>.<output_variable_name>
 ```
 
+---
 
-## Authors
+## _Authors_
 _Module maintained by Module maintained by the -_ **_Nitin Das_**
