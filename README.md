@@ -1,14 +1,14 @@
-# Terraform Module Name: terraform-module-lb
+# _Terraform Module: terraform-module-aws-lb_
 
 
-## General
+## _General_
 
 _This module may be used to create_ **_Application Load Balancer_** _resources in AWS cloud provider......._
 
 ---
 
 
-## Prerequisites
+## _Prerequisites_
 
 _This module needs_ **_Terraform 0.12.19_** _or newer._
 _You can download the latest Terraform version from_ [_here_](https://www.terraform.io/downloads.html).
@@ -17,7 +17,7 @@ _This module deploys aws services details are in respective feature branches._
 
 ---
 
-## Features Branches
+## _Features_
 
 _Below we are able to check the resources that are being created as part of this module call:_
 
@@ -28,21 +28,14 @@ _Below we are able to check the resources that are being created as part of this
 
 ---
 
-## Below are the resources that are launched by this module
+## _Usage_
 
-* **_Application Load Balancer_**
-
-
----
-
-## Usage
-
-## Using this repo
+## _Using this repo_
 
 _To use this module, add the following call to your code:_
 
 ```tf
-module "alb>" {
+module "alb" {
   source = "git::https://github.com/nitinda/terraform-module-aws-lb.git?ref=terraform-12/alb"
 
   providers = {
@@ -66,7 +59,7 @@ module "alb>" {
 
 ---
 
-## Inputs
+## _Inputs_
 
 _The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
@@ -81,28 +74,29 @@ _The variables required in order for the module to be successfully called from t
 | **_tags_** | _Resources Tags_ | _map(string)_ | **_Required_** |
 
 
+---
 
 
-## Outputs
+## _Outputs_
 
 * **_dns\_name_**
 * **_id_**
 * **_arn_**
 
+---
 
 
+### _Usage_
 
-### Usage
-_In order for the variables to be accessed on module level please use the syntax below:_
 
-```tf
-module.<module_name>.<output_variable_name>
 ```
 _The output variable is able to be accessed through terraform state file using the syntax below:_
 
 ```tf
-"${data.terraform_remote_state.<module_name>.<output_variable_name>}"
+data.terraform_remote_state.<module_name>.<output_variable_name>
 ```
 
-## Authors
+---
+
+## _Authors_
 _Module maintained by Module maintained by the -_ **_Nitin Das_**
