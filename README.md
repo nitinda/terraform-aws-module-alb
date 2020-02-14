@@ -1,14 +1,14 @@
-# Terraform Module Name: terraform-module-lb
+# _Terraform Module: terraform-module-aws-lb_
 
 
-## General
+## _General_
 
 _This module may be used to create_ **_Application Load Balancer_** _resources in AWS cloud provider......._
 
 ---
 
 
-## Prerequisites
+## _Prerequisites_
 
 _This module needs Terraform 0.12.16 or newer._
 _You can download the latest Terraform version from_ [_here_](https://www.terraform.io/downloads.html).
@@ -19,7 +19,7 @@ _This module deploys aws services details are in respective feature branches._
 ---
 
 
-## Features Branches
+## _Features Branches_
 
 _Below we are able to check the resources that are being created as part of this module call:_
 
@@ -40,16 +40,9 @@ _From branch :_ **_terraform-12/nlb_**
 
 ---
 
-## Below are the resources that are launched by this module
+## _Usage_
 
-* **_Load Balancer_**
-
-
----
-
-## Usage
-
-## Using this repo
+## _Using this repo_
 
 _To use this module, add the following call to your code:_
 
@@ -62,7 +55,7 @@ module "lb" {
 ```
 ---
 
-## Inputs
+## _Inputs_
 
 _The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
@@ -92,11 +85,6 @@ _In order for the variables to be accessed on module level please use the syntax
 module.<module_name>.<output_variable_name>
 ```
 
-_The output variable is able to be accessed through terraform state file using the syntax below:_
-
-```tf
-"${data.terraform_remote_state.<module_name>.<output_variable_name>}"
-```
 
 ## Authors
 _Module maintained by Module maintained by the -_ **_Nitin Das_**
