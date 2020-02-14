@@ -89,7 +89,6 @@ _The variables required in order for the module to be successfully called from t
 ### _Usage_
 
 
-```
 _The output variable is able to be accessed through terraform state file using the syntax below:_
 
 ```tf
