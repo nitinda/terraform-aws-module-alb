@@ -13,7 +13,6 @@
 ---
 <!--END STABILITY BANNER-->
 
----
 
 ## _General_
 
