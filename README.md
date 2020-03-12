@@ -52,7 +52,7 @@ module "alb" {
   ))
 
   # ALB
-  name               = "demo-alb-grafana"
+  name               = "demo-alb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [ var.security_group_ids ]
@@ -78,7 +78,7 @@ module "nlb" {
   ))
 
   # ALB
-  name               = "demo-alb-grafana"
+  name               = "demo-alb"
   internal           = false
   load_balancer_type = "network"
   subnets            = [ var.subnet_ids ]
