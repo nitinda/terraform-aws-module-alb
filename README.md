@@ -34,9 +34,12 @@ _Below we are able to check the resources that are being created as part of this
 
 _To use this module, add the following call to your code:_
 
+
+* **_Example: For Application Load Balancer_**
+
 ```tf
 module "alb" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-lb.git?ref=terraform-12/alb"
+  source = "git::https://github.com/nitinda/terraform-module-aws-lb.git?ref=master"
 
   providers = {
     aws = aws.services
@@ -49,10 +52,36 @@ module "alb" {
   ))
 
   # ALB
-  name            = "demo-alb-grafana"
-  internal        = false
-  security_groups = [ var.security_group_ids ]
-  subnets         = [ var.subnet_ids ]
+  name               = "demo-alb-grafana"
+  internal           = false
+  load_balancer_type = "application"
+  security_groups    = [ var.security_group_ids ]
+  subnets            = [ var.subnet_ids ]
+}
+
+```
+
+* **_Example: For Network Load Balancer_**
+
+```tf
+module "nlb" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-lb.git?ref=master"
+
+  providers = {
+    aws = aws.services
+  }
+
+  # Tags
+  common_tags = merge(var.common_tags, map(
+    "Description", "Application Load balancer ",
+    "ManagedBy", "Terraform"
+  ))
+
+  # ALB
+  name               = "demo-alb-grafana"
+  internal           = false
+  load_balancer_type = "network"
+  subnets            = [ var.subnet_ids ]
 }
 
 ```
