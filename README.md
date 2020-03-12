@@ -10,7 +10,7 @@ _This module may be used to create_ **_Application Load Balancer_** _resources i
 
 ## _Prerequisites_
 
-_This module needs Terraform 0.12.16 or newer._
+_This module needs Terraform 0.11.14 or newer._
 _You can download the latest Terraform version from_ [_here_](https://www.terraform.io/downloads.html).
 
 _This module deploys aws services details are in respective feature branches._
@@ -28,7 +28,7 @@ _From branch :_ **_terraform-11/alb_**
 * **_Application Load Balancer_**
 
 
-_From branch :_ **_terraform-12/alb_**
+_From branch :_ **_terraform-12/lb_**
 
 * **_Application Load Balancer_**
 
