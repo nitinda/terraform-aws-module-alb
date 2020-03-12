@@ -1,6 +1,5 @@
 # _Terraform Module: terraform-module-aws-lb_
 
----
 
 <!--BEGIN STABILITY BANNER-->
 ---
