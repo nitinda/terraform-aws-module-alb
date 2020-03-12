@@ -1,5 +1,16 @@
 # _Terraform Module: terraform-module-aws-lb_
 
+<!--BEGIN STABILITY BANNER-->
+---
+
+![_Code : Stable_](https://img.shields.io/badge/Code-Stable-brightgreen?style=for-the-badge&logo=github)
+
+> **_This is a stable example. It should successfully build out of the box_**
+>
+> _This examples does is built on Construct Libraries marked "Stable" and does not have any infrastructure prerequisites to build._
+
+---
+<!--END STABILITY BANNER-->
 
 ## _General_
 
@@ -14,6 +25,7 @@ _This module needs_ **_Terraform 0.12.19_** _or newer._
 _You can download the latest Terraform version from_ [_here_](https://www.terraform.io/downloads.html).
 
 _This module deploys aws services details are in respective feature branches._
+
 
 ---
 
