@@ -46,10 +46,12 @@ module "alb" {
   }
 
   # Tags
-  common_tags = merge(var.common_tags, map(
-    "Description", "Application Load balancer ",
-    "ManagedBy", "Terraform"
-  ))
+  tags = {
+    Description = "Network Load balancer"
+    ManagedBy   = "Terraform"
+    Project     = "POC"
+    Environment = "prod"
+  }
 
   # ALB
   name               = "demo-alb"
@@ -72,10 +74,12 @@ module "nlb" {
   }
 
   # Tags
-  common_tags = merge(var.common_tags, map(
-    "Description", "Application Load balancer ",
-    "ManagedBy", "Terraform"
-  ))
+  tags = {
+    Description = "Network Load balancer"
+    ManagedBy   = "Terraform"
+    Project     = "POC"
+    Environment = "prod"
+  }
 
   # ALB
   name               = "demo-alb"
