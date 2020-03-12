@@ -7,6 +7,10 @@ variable "internal" {
   description = "If true, the LB will be internal."
 }
 
+variable "load_balancer_type" {
+  description = "The type of load balancer to create."
+}
+
 variable "security_groups" {
   description = "A list of security group IDs to assign to the LB. Only valid for Load Balancers of type application."
   type        = list(string)
