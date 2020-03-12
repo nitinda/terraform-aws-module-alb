@@ -47,7 +47,7 @@ module "alb" {
 
   # Tags
   tags = {
-    Description = "Network Load balancer"
+    Description = "Application Load balancer"
     ManagedBy   = "Terraform"
     Project     = "POC"
     Environment = "prod"
