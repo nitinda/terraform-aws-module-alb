@@ -2,7 +2,7 @@ resource "aws_lb" "lb" {
   name               = var.name
   internal           = var.internal
   load_balancer_type = var.load_balancer_type
-  security_groups = var.security_groups == null ? null : var.security_groups
+  security_groups    = var.security_groups == null ? var.security_groups : var.security_groups
   subnets            = var.subnets
   dynamic "access_logs" {
     for_each = var.access_logs

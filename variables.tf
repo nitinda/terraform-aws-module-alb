@@ -14,6 +14,7 @@ variable "load_balancer_type" {
 variable "security_groups" {
   description = "A list of security group IDs to assign to the LB. Only valid for Load Balancers of type application."
   type        = list(string)
+  default     = null
 }
 
 variable "subnets" {
