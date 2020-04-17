@@ -58,20 +58,25 @@ module "alb" {
     aws = aws.services
   }
 
-  # Tags
-  tags = {
-    Description = "Application Load balancer"
-    ManagedBy   = "Terraform"
-    Project     = "POC"
-    Environment = "prod"
-  }
-
-  # ALB
-  name               = "demo-alb"
+  name               = "alb"
   internal           = false
-  load_balancer_type = "application"
-  security_groups    = [ var.security_group_ids ]
-  subnets            = [ var.subnet_ids ]
+
+  security_groups = [
+      module.security_group_alb.id
+  ]
+
+  subnets = [
+      module.vpc_subnet_public_1a.id,
+      module.vpc_subnet_public_1b.id
+  ]
+
+  tags = merge(
+    var.common_tags,
+    {
+      Environment = "prod"
+      Name        = "alb"
+    }
+  )
 }
 
 ```
@@ -86,19 +91,22 @@ module "nlb" {
     aws = aws.services
   }
 
-  # Tags
-  tags = {
-    Description = "Network Load balancer"
-    ManagedBy   = "Terraform"
-    Project     = "POC"
-    Environment = "prod"
-  }
-
-  # ALB
-  name               = "demo-alb"
+  name               = "nlb"
   internal           = false
   load_balancer_type = "network"
-  subnets            = [ var.subnet_ids ]
+
+  subnets = [
+      module.vpc_subnet_public_1a.id,
+      module.vpc_subnet_public_1b.id
+  ]
+
+  tags = merge(
+    var.common_tags,
+    {
+      Environment = "prod"
+      Name        = "nlb"
+    }
+  )
 }
 
 ```
