@@ -1,25 +1,29 @@
 ## ALB
 variable "name" {
-  description = "Creates a unique name beginning with the specified prefix."
-}
-
-variable "internal" {
-  description = "If true, the LB will be internal."
-}
-
-variable "load_balancer_type" {
-  description = "The type of load balancer to create."
-}
-
-variable "security_groups" {
-  description = "A list of security group IDs to assign to the LB. Only valid for Load Balancers of type application."
-  type        = list(string)
+  description = "The name of the LB."
   default     = null
 }
 
-variable "subnets" {
-  description = " A list of subnet IDs to attach to the LB. Subnets cannot be updated for Load Balancers of type network."
+variable "name" {
+  description = "Creates a unique name beginning with the specified prefix"
+  default     = null
+}
+
+variable "internal" {
+  description = "If true, the LB will be internal"
+  default     = false
+  type        = bool
+}
+
+variable "load_balancer_type" {
+  description = "The type of load balancer to create"
+  default     = "application"
+}
+
+variable "security_groups" {
+  description = "A list of security group IDs to assign to the LB"
   type        = list(string)
+  default     = null
 }
 
 variable "access_logs" {
@@ -28,7 +32,30 @@ variable "access_logs" {
   default     = []
 }
 
-## Tags
+variable "subnets" {
+  description = "A list of subnet IDs to attach to the LB"
+  type        = list(string)
+  default     = []
+}
+
+variable "enable_deletion_protection" {
+  description = "If true, deletion of the load balancer will be disabled via the AWS API"
+  default     = false
+  type        = bool
+}
+
+variable "enable_cross_zone_load_balancing" {
+  description = "If true, cross-zone load balancing of the load balancer will be enabled"
+  default     = false
+  type        = bool
+}
+
+variable "enable_http2" {
+  description = "Indicates whether HTTP/2 is enabled in application load balancers"
+  default     = true
+  type        = bool
+}
+
 variable "tags" {
   description = "Resources Tags"
   type        = map(string)
