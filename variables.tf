@@ -38,6 +38,13 @@ variable "subnets" {
   default     = []
 }
 
+variable "subnet_mapping" {
+  description = "A subnet mapping block as documented below"
+  type        = list(string)
+  default     = []
+}
+
+
 variable "enable_deletion_protection" {
   description = "If true, deletion of the load balancer will be disabled via the AWS API"
   default     = false
