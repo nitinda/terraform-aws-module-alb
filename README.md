@@ -124,9 +124,9 @@ _The variables required in order for the module to be successfully called from t
 | **_internal_** | _If true, the LB will be internal_ | _bool_ | **_Optional_** | **_false_** |
 | **_load\_balancer\_type_** | _The type of load balancer to create_ | _string_ | **_Optional_** | **_application_** |
 | **_security\_groups_** | _ALB security group.<br/>This is a Application load balancer feature._ | _list(string)_ | **_Optional_** | **_[]_** |
-| **_access\_logs_** | _An Access Logs block_ | _map(string)_ | **_Optional_** | **_[]_** |
-| **_subnets_** | _A list of subnet IDs to attach to the LB_ | _map(string)_ | **_Optional_** | **_[]_** |
-| **_subnet\_mapping_** | _A subnet mapping block as documented below_ | _map(string)_ | **_Optional_** | **_[]_** |
+| **_access\_logs_** | _An Access Logs block_ | _map(string)_ | **_Optional_** | **_{}_** |
+| **_subnets_** | _A list of subnet IDs to attach to the LB_ | _list(string)_ | **_Optional_** | **_[]_** |
+| **_subnet\_mapping_** | _A subnet mapping block as documented below_ | _map(string)_ | **_Optional_** | **_{}_** |
 | **_enable\_deletion\_protection_** | _If true, deletion of the load balancer <br/>will be disabled via the AWS API_ | _boolean_ | **_Optional_** | **_false_** |
 | **_enable\_cross\_zone\_load\_balancing_** | _If true, cross-zone load balancing of <br/>the load balancer will be enabled.<br/>This is a network load balancer feature._ | _boolean_ | **_Optional_** | **_false_** |
 | **_enable\_http2_** | _Indicates whether HTTP/2 is enabled in <br/>application load balancers_ | _boolean_ | **_Optional_** | **_true_** |
