@@ -59,8 +59,7 @@ module "alb" {
     aws = aws.services
   }
 
-  name               = "alb"
-  internal           = false
+  name = "alb"
 
   security_groups = [
       module.security_group_alb.id
@@ -93,7 +92,6 @@ module "nlb" {
   }
 
   name               = "nlb"
-  internal           = false
   load_balancer_type = "network"
 
   subnets = [
@@ -121,13 +119,18 @@ _The variables required in order for the module to be successfully called from t
 
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** | **_Default Value_** |
 |:----|:----|-----:|:---:|:---:|
-| **_name_** | _Creates a unique name_ | _string_ | **_Required_** | **_{}_** |
-| **_internal_** | _If true, the LB will be internal_ | _bool_ | **_Required_** | **_{}_** |
-| **_load\_balancer\_type_** | _The type of load balancer to create_ | _string_ | **_Required_** | **_{}_** |
-| **_security\_groups_** | _ALB security group_ | _list(string)_ | **_Optional (Default - null)_** | **_{}_** |
-| **_subnets_** | _A list of subnet IDs to attach to the LB_ | _list(string)_ | **_Required_** | **_[]_** |
+| **_name_** | _The name of the LB_ | _string_ | **_Optional_** | **_null_** |
+| **_name_** | _Creates a unique name beginning with the specified prefix_ | _string_ | **_Optional_** | **_null_** |
+| **_internal_** | _If true, the LB will be internal_ | _bool_ | **_Optional_** | **_false_** |
+| **_load\_balancer\_type_** | _The type of load balancer to create_ | _string_ | **_Optional_** | **_application_** |
+| **_security\_groups_** | _ALB security group.<br/>This is a Application load balancer feature._ | _list(string)_ | **_Optional_** | **_[]_** |
 | **_access\_logs_** | _An Access Logs block_ | _any_ | **_Optional_** | **_[]_** |
-| **_tags_** | _Resources Tags_ | _map(string)_ | **_Optional_** | **_{}_** |
+| **_subnets_** | _A list of subnet IDs to attach to the LB_ | _list(string)_ | **_Optional_** | **_[]_** |
+| **_subnet\_mapping_** | _A subnet mapping block as documented below_ | _list(string)_ | **_Optional_** | **_[]_** |
+| **_enable\_deletion\_protection_** | _If true, deletion of the load balancer <br/>will be disabled via the AWS API_ | _boolean_ | **_Optional_** | **_false_** |
+| **_enable\_cross\_zone\_load\_balancing_** | _If true, cross-zone load balancing of <br/>the load balancer will be enabled.<br/>This is a network load balancer feature._ | _boolean_ | **_Optional_** | **_false_** |
+| **_enable\_http2_** | _Indicates whether HTTP/2 is enabled in <br/>application load balancers_ | _boolean_ | **_Optional_** | **_true_** |
+| **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Optional_** | **_{}_** |
 
 
 ---
