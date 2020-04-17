@@ -28,20 +28,20 @@ variable "security_groups" {
 
 variable "access_logs" {
   description = "An Access Logs block."
-  type        = list(string)
-  default     = []
+  type        = map(string)
+  default     = {}
 }
 
 variable "subnets" {
   description = "A list of subnet IDs to attach to the LB"
-  type        = list(string)
-  default     = []
+  type        = map(string)
+  default     = {}
 }
 
 variable "subnet_mapping" {
   description = "A subnet mapping block as documented below"
-  type        = list(string)
-  default     = []
+  type        = map(string)
+  default     = {}
 }
 
 
@@ -66,4 +66,5 @@ variable "enable_http2" {
 variable "tags" {
   description = "Resources Tags"
   type        = map(string)
+  default     = {}
 }
