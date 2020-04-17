@@ -17,11 +17,10 @@ resource "aws_lb" "lb" {
   subnets = var.subnets
   
   dynamic "subnet_mapping" {
-    for_each = var.access_logs
+    for_each = var.subnet_mapping
     content {
-      bucket  = subnet_mapping.value.bucket
-      enabled = lookup(subnet_mapping.value, "subnet_id", null)
-      prefix  = lookup(subnet_mapping.value, "allocation_id", null)
+      subnet_id      = lookup(subnet_mapping.value, "subnet_id", null)
+      allocation_id  = lookup(subnet_mapping.value, "allocation_id", null)
     }
   }
 

@@ -23,7 +23,7 @@ variable "load_balancer_type" {
 variable "security_groups" {
   description = "A list of security group IDs to assign to the LB"
   type        = list(string)
-  default     = null
+  default     = []
 }
 
 variable "access_logs" {
