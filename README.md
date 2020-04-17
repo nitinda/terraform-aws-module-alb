@@ -8,7 +8,6 @@
 
 > **_This is a stable example. It should successfully build out of the box_**
 >
-> _This examples does is built on Construct Libraries marked "Stable" and does not have any infrastructure prerequisites to build._
 
 ---
 <!--END STABILITY BANNER-->
@@ -16,7 +15,7 @@
 
 ## _General_
 
-_This module may be used to create_ **_Application Load Balancer_** _resources in AWS cloud provider......._
+_This module provides a_ **_Load Balancer_** _resources in AWS cloud provider......._
 
 ---
 
@@ -36,7 +35,7 @@ _This module deploys aws services details are in respective feature branches._
 _Below we are able to check the resources that are being created as part of this module call:_
 
 
-* **_Application Load Balancer_**
+* **_Load Balancer_**
 
 
 
@@ -111,15 +110,15 @@ module "nlb" {
 _The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
 
-|**_Variable_** | **_Description_** | **_Type_** | **_Comments_** |
-|:----|:----|-----:|-----:|
-| **_name_** | _Creates a unique name_ | _string_ | **_Required_** |
-| **_internal_** | _If true, the LB will be internal_ | _bool_ | **_Required_** |
-| **_load\_balancer\_type_** | _The type of load balancer to create_ | _string_ | **_Required_** |
-| **_security\_groups_** | _ALB security group_ | _list(string)_ | **_Optional (Default - null)_** |
-| **_subnets_** | _A list of subnet IDs to attach to the LB_ | _list(string)_ | **_Required_** |
-| **_access\_logs_** | _An Access Logs block_ | _any_ | **_Optional (Default - [])_** |
-| **_tags_** | _Resources Tags_ | _map(string)_ | **_Required_** |
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** | **_Default Value_** |
+|:----|:----|-----:|:---:|:---:|
+| **_name_** | _Creates a unique name_ | _string_ | **_Required_** | **_{}_** |
+| **_internal_** | _If true, the LB will be internal_ | _bool_ | **_Required_** | **_{}_** |
+| **_load\_balancer\_type_** | _The type of load balancer to create_ | _string_ | **_Required_** | **_{}_** |
+| **_security\_groups_** | _ALB security group_ | _list(string)_ | **_Optional (Default - null)_** | **_{}_** |
+| **_subnets_** | _A list of subnet IDs to attach to the LB_ | _list(string)_ | **_Required_** | **_[]_** |
+| **_access\_logs_** | _An Access Logs block_ | _any_ | **_Optional_** | **_[]_** |
+| **_tags_** | _Resources Tags_ | _map(string)_ | **_Optional_** | **_{}_** |
 
 
 ---
