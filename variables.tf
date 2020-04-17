@@ -34,8 +34,8 @@ variable "access_logs" {
 
 variable "subnets" {
   description = "A list of subnet IDs to attach to the LB"
-  type        = map(string)
-  default     = {}
+  type        = lis(string)
+  default     = []
 }
 
 variable "subnet_mapping" {
