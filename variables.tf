@@ -4,7 +4,7 @@ variable "name" {
   default     = null
 }
 
-variable "name" {
+variable "name_prefix" {
   description = "Creates a unique name beginning with the specified prefix"
   default     = null
 }
